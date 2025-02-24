@@ -6,7 +6,7 @@
 /*   By: mokon <mokon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 14:21:07 by mokon             #+#    #+#             */
-/*   Updated: 2025/02/24 15:57:58 by mokon            ###   ########.fr       */
+/*   Updated: 2025/02/24 18:12:33 by mokon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,11 @@ int	printf_ptr(void *ptr)
 {
 	int	n;
 
+	if (!ptr)
+	{
+		write(1, "(nil)", 5);
+		return (5);
+	}
 	if (printf_string("0x") == -1)
 		return (-1);
 	n = ft_hex_address((unsigned long long)ptr);
